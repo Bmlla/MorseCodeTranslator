@@ -9,7 +9,7 @@ The binary changes between Operation Systems. So, for play the app, you can run 
 make build
 ```
 It will generate a file for execution in the same folder as the `makefile` has been executed
-
+---
 ### Executing
 For execution, we can use 3 params:
 * --text: Text to be translated;
@@ -31,7 +31,7 @@ make run-demo-to
 //"Running with text='HELLO WORLD', dict='default/latin', mode='to'"
 //.... . .-.. .-.. ---  .-- --- .-. .-.. -..
 ```
-
+---
 ### Running out of Makefile
 To run out of makefile commands, just:
 ```sh
