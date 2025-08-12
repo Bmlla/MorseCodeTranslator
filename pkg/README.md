@@ -45,8 +45,10 @@ This library translates words and phrases from an alphabet to Morse code and Mor
 | , | --..-- | @ | .--.-. |
 | ? | ..--.. | ( | -.--. |
 | ! | -.-.-- | ) | -.--.- |
-| / | -..-
+| / | -..-   
 
+
+---
 ### Implementation
 Instalation in your GOlang app
 ```
@@ -57,7 +59,7 @@ Adding it into your code
 translator := translation.New(customDictionaryPath)
 ```
 * customDictionaryPath: path to custom dictionary. By default, dictionary is setted to Latin
-
+---
 ### From Morse
 ```golang
 translator.ToMorse(text)
@@ -68,8 +70,8 @@ text := ".... . .-.. .-.. ---  .-- --- .-. .-.. -.." //HELLO WORLD
 translator.FromMorse(text)
 
 //output: "HELLO WORLD"
-```
-
+```   
+---
 ### To Morse
 ```golang
 translator.ToMorse(text)
@@ -81,7 +83,7 @@ translator.ToMorse(text)
 
 //output: ".... . .-.. .-.. ---  .-- --- .-. .-.. -.."
 ```
-
+---
 ### Adding a custom dictionary
 The dictionary uses the following pattern:
 ```json
@@ -107,13 +109,13 @@ text := ".... . .-.. .-.. ---  .-- --- .-. .-.. -.." //HELLO WORLD
 
 //output: ХЕЛЛО ВОРЛД
 ```
-
+---
 ### Running tests
 ```sh
 cd pkg/
 make test
 ```
-
+---
 ### Playground
-For Playground documentation, click [here](pkg\docs\playground.md)
+For Playground documentation, click [here](pkg\docs\playground.md)   
 For Architecture Decision Record, click [here](pkg\docs\architecture_decision_recording.md)
