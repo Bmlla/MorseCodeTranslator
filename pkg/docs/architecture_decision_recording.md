@@ -12,7 +12,7 @@ Following the lib patterns in Golang, ideally, the code is in `pkg` folder. It w
     * `entities`: entities that maka part of core. Hardly will change and doesnt knows the exterior world;
         * `types`: auxiliary types used around domain;
     * `translation`: The use-cases services folder. Was named "translation" to be more friendly to users and to makes sense in imports paths;
-
+---
 ### Code
 
 Here, you will find details of decisions around the code
