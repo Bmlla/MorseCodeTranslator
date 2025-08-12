@@ -8,7 +8,8 @@ The binary changes between Operation Systems. So, for play the app, you can run 
 // In root project folder
 make build
 ```
-It will generate a file for execution in the same folder as the `makefile` has been executed
+It will generate a file for execution in the same folder as the `makefile` has been executed   
+
 ---
 ### Executing
 For execution, we can use 3 params:
