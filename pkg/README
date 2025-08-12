@@ -1,0 +1,119 @@
+# Morse Translator
+
+![gopher](https://www.contrastsecurity.com/hs-fs/hubfs/golang-l-logo.jpg?width=340&height=219&name=golang-l-logo.jpg)
+
+This library translates words and phrases from an alphabet to Morse code and Morse code to an alphabet
+
+![coverage](https://camo.githubusercontent.com/79bc17019c8389420c25a7e539d35b27c2c20d216807c490b53fab4d54b893ee/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f436f7665726167652d3130302532352d627269676874677265656e2e737667)
+### Features
+
+- Accepts input in Morse code and translates it to an alphabet;
+- Accepts input in alphabet and translates it to Morse code;
+- Supports custom dictionaries;
+- Gate symbols/special characte;
+
+### Supported Symbols
+| Character | Morse Code | Character | Morse Code |
+|-----------|------------|-----------|------------|
+| A | .- | N | -. |
+| B | -... | O | --- |
+| C | -.-. | P | .--. |
+| D | -.. | Q | --.- |
+| E | . | R | .-. |
+| F | ..-. | S | ... |
+| G | --. | T | - |
+| H | .... | U | ..- |
+| I | .. | V | ...- |
+| J | .--- | W | .-- |
+| K | -.- | X | -..- |
+| L | .-.. | Y | -.-- |
+| M | -- | Z | --.. |
+
+## Numbers
+| Number | Morse Code | Number | Morse Code |
+|--------|------------|---------|------------|
+| 0 | ----- | 5 | ..... |
+| 1 | .---- | 6 | -.... |
+| 2 | ..--- | 7 | --... |
+| 3 | ...-- | 8 | ---.. |
+| 4 | ....- | 9 | ----. |
+
+## Special Characters
+| Character | Morse Code | Character | Morse Code |
+|-----------|------------|-----------|------------|
+| . | .-.-.- | - | -....- |
+| , | --..-- | @ | .--.-. |
+| ? | ..--.. | ( | -.--. |
+| ! | -.-.-- | ) | -.--.- |
+| / | -..-
+
+### Implementation
+Instalation in your GOlang app
+```
+go get com.github/Bmlla/MorseCodeTranslator/pkg/domain/translation
+```
+Adding it into your code
+```golang
+translator := translation.New(customDictionaryPath)
+```
+* customDictionaryPath: path to custom dictionary. By default, dictionary is setted to Latin
+
+### From Morse
+```golang
+translator.ToMorse(text)
+```
+Example
+```golang
+text := ".... . .-.. .-.. ---  .-- --- .-. .-.. -.." //HELLO WORLD
+translator.FromMorse(text)
+
+//output: "HELLO WORLD"
+```
+
+### To Morse
+```golang
+translator.ToMorse(text)
+```
+Example
+```golang
+text := "HELLO WORLD" //.... . .-.. .-.. ---  .-- --- .-. .-.. -..
+translator.ToMorse(text)
+
+//output: ".... . .-.. .-.. ---  .-- --- .-. .-.. -.."
+```
+
+### Adding a custom dictionary
+The dictionary uses the following pattern:
+```json
+{
+    "to": {
+        "0": "-----",
+        "1": ".----",
+        "2": "..---",
+        .... any another symbols
+    },
+    "from": {
+        "-----": "0",
+        ".----": "1",
+        "..---": "2",
+        ... any another symbols
+    }
+}
+```
+Example of Russian custom dictionary
+```golang
+text := ".... . .-.. .-.. ---  .-- --- .-. .-.. -.." //HELLO WORLD
+...
+
+//output: ХЕЛЛО ВОРЛД
+```
+
+### Running tests
+```sh
+cd pkg/
+make test
+```
+
+### Playground
+For Playground documentation, click [here](pkg\docs\playground.md)
+For Architecture Decision Record, click [here](pkg\docs\architecture_decision_recording.md)
